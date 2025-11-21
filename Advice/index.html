@@ -1,18 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Advice — Super Front</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;900&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advice</title>
-</head>
-<body>
-    <div>
-        <h1>Receive a Advice</h1>
-        <p></p>
-        <button title="Click the button and see">Click</button>
+  </head>
+  <body>
+    <div class="stage">
+      <div class="blobs">
+        <div class="blob b1"></div>
+        <div class="blob b2"></div>
+        <div class="blob b3"></div>
+      </div>
+
+      <header class="header">
+        <h1 class="logo">Advice <span class="dot">.</span></h1>
+        <p class="subtitle">Perspicácia aleatória para o seu dia</p>
+      </header>
+
+      <main class="card" role="main">
+        <div class="card-inner">
+          <div class="advice-meta">
+            <small class="advice-id">#<span id="advice-id">—</span></small>
+            <small class="translation-badge" id="translation-badge">Traduzido ↑</small>
+            <div class="advice-quote">
+              <svg class="quote" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.17 6A5 5 0 1 1 6 11h2a3 3 0 1 0 0-6H7.17Z"></path><path fill="currentColor" d="M17.17 6A5 5 0 1 1 16 11h2a3 3 0 1 0 0-6h-0.83Z"></path></svg>
+              <p id="advice-text">Clique no botão e receba sabedoria instantânea...</p>
+            </div>
+          </div>
+
+          <div class="controls">
+            <button id="btn-get" class="btn-get" title="Gerar conselho">
+              <span class="dice">🎲</span>
+              <span class="label">Gerar conselho</span>
+            </button>
+            <button id="btn-copy" class="btn-icon" title="Copiar conselho">📋</button>
+            <button id="btn-original" class="btn-icon" title="Mostrar original">🔁</button>
+          </div>
+
+          <div id="credits" class="credits">Fonte: <a href="https://api.adviceslip.com" target="_blank" rel="noopener noreferrer">Advice Slip API</a></div>
+        </div>
+      </main>
+
+      <footer class="footer">Desenvolvido com ❤️ por felipe-las-casas</footer>
     </div>
-    <script src="js/app.js"></script>
-</body>
+
+    <script src="js/app.js" defer></script>
+  </body>
 </html>
