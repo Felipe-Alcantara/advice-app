@@ -64,9 +64,12 @@ body{
 .original-text.show{opacity:1;max-height:200px}
 
 .credits{font-size:.85rem;color:rgba(255,255,255,.55);text-align:center}
-.credits a{color:lightblue;text-decoration:none}
+.credits a{color:var(--accent);text-decoration:none;font-weight:700;text-shadow:0 6px 18px rgba(2,6,23,.6);transition:color .15s ease}
+.credits a:hover{color:var(--accent-2)}
 
 .footer{position:relative;z-index:4;margin-top:20px;font-size:.85rem;color:rgba(255,255,255,.45)}
+.footer a{color:var(--accent);text-decoration:none;font-weight:700;text-shadow:0 6px 18px rgba(2,6,23,.6);transition:color .15s ease}
+.footer a:hover{color:var(--accent-2)}
 
 /* Animations when new advice loads */
 .pop{animation:pop .5s cubic-bezier(.34,1.56,.64,1)}
