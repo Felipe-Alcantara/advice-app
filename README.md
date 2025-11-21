@@ -2,6 +2,8 @@
 
 Tags: #javascript #frontend #API #HTML #CSS #pt-BR
 
+🌐 **Versão WEB:** [https://felipe-alcantara.github.io/advice-app/](https://felipe-alcantara.github.io/advice-app/)
+
 Um pequeno aplicativo front-end que busca conselhos da API `Advice Slip` e os apresenta com um visual moderno — com tradução automática opcional e controles para copiá-los e ver o texto original.
 
 ---
