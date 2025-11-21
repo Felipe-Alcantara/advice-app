@@ -1,0 +1,85 @@
+/* Imports */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;900&family=Inter:wght@300;400;700&display=swap');
+
+:root{
+  --bg-1: #0f172a;
+  --bg-2: #070b2c;
+  --accent: #ff6bcb;
+  --accent-2: #7b61ff;
+  --glass: rgba(255,255,255,0.06);
+  --glass-strong: rgba(255,255,255,0.08);
+  --muted: rgba(255,255,255,0.8);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Inter', sans-serif;
+  background: linear-gradient(135deg,var(--bg-1) 0%, #071533 60%, #111827 100%);
+  color: white;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.stage{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;padding:60px 20px}
+
+/* animated background blobs */
+.blobs{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.9;mix-blend-mode:screen}
+.b1{width:560px;height:560px;background:radial-gradient(circle at 20% 30%,var(--accent),transparent 40%);left:-120px;top:-120px;animation:blob 18s ease-in-out infinite}
+.b2{width:420px;height:420px;background:radial-gradient(circle at 50% 30%,var(--accent-2),transparent 40%);right:-100px;top:-80px;animation:blob 14s ease-in-out infinite reverse}
+.b3{width:380px;height:380px;background:radial-gradient(circle at 80% 60%,#00fff0,transparent 35%);left:20%;bottom:-100px;animation:blob 22s ease-in-out infinite}
+
+@keyframes blob{0%{transform:translate(0,0) scale(1)}25%{transform:translate(30px,20px) scale(1.05)}50%{transform:translate(0,-20px) scale(.98)}75%{transform:translate(-30px,10px) scale(1.03)}100%{transform:translate(0,0) scale(1)}}
+
+/* Header */
+.header{position:relative;z-index:2;text-align:center;margin-bottom:28px}
+.logo{font-weight:900;letter-spacing:1px;margin:0;color:white;font-size:2.2rem}
+.logo .dot{color:var(--accent);text-shadow:0 6px 40px rgba(255,107,203,.35)}
+.subtitle{margin:6px 0 0;font-size:.95rem;color:rgba(255,255,255,.8)}
+
+/* Card */
+.card{position:relative;z-index:3;width:min(900px,92%);max-width:900px;padding:36px;border-radius:18px;background:linear-gradient(135deg,var(--glass),rgba(255,255,255,.02));backdrop-filter: blur(10px);box-shadow: 0 8px 40px rgba(2,6,23,.6);border:1px solid rgba(255,255,255,.04)}
+.card-inner{display:flex;flex-direction:column;gap:20px}
+
+.advice-meta{display:flex;flex-direction:column;align-items:center}
+.translation-badge{font-size:.75rem;padding:4px 8px;border-radius:999px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#061026;font-weight:700;margin-top:8px}
+.advice-id{font-weight:700;background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.advice-quote{display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:12px;text-align:justify}
+.advice-quote .quote{width:56px;height:56px;color:rgba(255,255,255,.16);filter:drop-shadow(0 10px 50px rgba(123,97,255,.2))}
+.advice-quote p{margin:0;font-size:1.6rem;line-height:1.45;font-weight:700;letter-spacing:.02em;color:white;text-shadow:0 6px 40px rgba(0,0,0,.45);max-width:760px;width:min(86%,900px);text-align:justify;text-align-last:center;-moz-text-align-last:center;hyphens:auto;overflow-wrap:break-word;text-justify:inter-word}
+
+/* Force browsers to treat the last line so justification applies to previous lines
+  while keeping the last line centered. The pseudo-element is invisible and
+  only used as a layout trick. */
+.advice-quote p::after{content:"";display:inline-block;width:100%;height:0;visibility:hidden}
+
+.controls{display:flex;gap:12px;align-items:center;justify-content:center}
+.btn-get{display:inline-flex;align-items:center;background:linear-gradient(90deg,var(--accent),#ffd34e);color:#061026;padding:12px 20px;border-radius:999px;border:none;cursor:pointer;font-weight:700;box-shadow:0 8px 30px rgba(0,0,0,.35),0 0 20px rgba(255,107,203,.1);transition:transform .18s ease,box-shadow .18s ease}
+.btn-get .dice{display:inline-block;margin-right:10px;font-size:1.2rem;transform-origin:center}
+.btn-get:active{transform:scale(.98)}
+.btn-get:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,.45),0 0 36px rgba(123,97,255,.18)}
+.btn-get:focus{outline:3px solid rgba(255,107,203,.18)}
+.btn-icon{background:linear-gradient(90deg,rgba(255,255,255,.06),rgba(255,255,255,.02));color:var(--muted);border:1px solid rgba(255,255,255,.04);padding:10px 12px;border-radius:10px;cursor:pointer}
+
+.btn-icon.secondary{background:rgba(255,255,255,.02)}
+
+.original-text{margin-top:6px;font-size:.92rem;color:rgba(255,255,255,.72);opacity:0;max-height:0;overflow:hidden;transition:all .22s ease}
+.original-text.show{opacity:1;max-height:200px}
+
+.credits{font-size:.85rem;color:rgba(255,255,255,.55);text-align:center}
+.credits a{color:lightblue;text-decoration:none}
+
+.footer{position:relative;z-index:4;margin-top:20px;font-size:.85rem;color:rgba(255,255,255,.45)}
+
+/* Animations when new advice loads */
+.pop{animation:pop .5s cubic-bezier(.34,1.56,.64,1)}
+@keyframes pop{0%{opacity:0;transform:translateY(8px) scale(.98)}100%{opacity:1;transform:translateY(0) scale(1)}}
+
+/* smaller screens */
+@media (max-width:600px){
+  .advice-quote p{font-size:1.2rem}
+  .logo{font-size:1.6rem}
+  .card{padding:22px}
+}
